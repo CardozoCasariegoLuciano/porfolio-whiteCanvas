@@ -1,0 +1,32 @@
+@use "variables" as v;
+@use "mixis" as m;
+
+.m-footer {
+  margin-top: 80px;
+  padding: 40px 0px 60px 0px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+
+  &__contactIcons {
+    display: flex;
+    margin-bottom: 24px;
+  }
+
+  &__contactIcon {
+    width: 30px;
+    height: 30px;
+    //background-color: lightseagreen;
+    border-radius: 5px;
+    margin: 0px 20px 0px 20px;
+    cursor: pointer;
+
+    & img{
+      width: 100%;
+    }
+  }
+
+  &__contactEmail {
+    @include m.titles(400, 0px, 18px);
+  }
+}

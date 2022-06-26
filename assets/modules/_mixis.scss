@@ -1,0 +1,27 @@
+@use "variables" as v;
+
+@mixin titles($font-weight, $margin-bottom, $font-size, $color: v.$main-color) {
+  font-weight: $font-weight;
+  font-family: v.$title-family;
+  font-size: $font-size;
+  margin-bottom: $margin-bottom;
+  color: $color;
+}
+
+@mixin texts($font-size, $color: v.$main-color) {
+  color: v.$main-color;
+  font-size: $font-size;
+  font-family: v.$texts-family;
+}
+
+@mixin content($margin-bottom, $mobile-w, $desktop-w : v.$desktop-section-width) {
+  padding: 0px v.$mobile-padding;
+  margin: auto;
+  margin-bottom: $margin-bottom;
+  width: $mobile-w;
+
+  @media (min-width: 1000px) {
+    padding: 0px;
+    width: $desktop-w;
+  }
+}

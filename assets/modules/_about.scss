@@ -1,0 +1,59 @@
+@use "variables" as v;
+@use "mixis" as m;
+
+.about {
+  @include m.content(60px, none);
+
+  &__title {
+    @include m.titles(800, 24px, 34px)
+  }
+
+  &__description {
+    @include m.texts(16px);
+    line-height: 24px;
+  }
+}
+
+.aboutSection {
+  @include m.content(0px, none);
+
+  &__title {
+    margin-top: 20px;
+    @include m.titles(400, 32px, 22px ,v.$secondary-color);
+  }
+
+  &__conteiner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid v.$border-color;
+
+    &:last-child{
+      margin-bottom: 0px;
+    }
+
+    &--title {
+      @include m.titles(700, 16px, 22px, v.$main-color);
+    }
+
+    &--date {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 16px;
+      font-family: v.$title-family;
+      font-size: 16px;
+
+      span {
+        color: v.$main-color;
+      }
+    }
+
+    &--description {
+      @include m.texts(16px);
+    }
+  }
+}

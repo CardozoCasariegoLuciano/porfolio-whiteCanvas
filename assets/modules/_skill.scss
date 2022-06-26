@@ -1,0 +1,91 @@
+@use "variables" as v;
+@use "mixis" as m;
+
+.skill {
+  background-color: #121212;
+  color: white;
+  padding: 30px v.$mobile-padding 60px v.$mobile-padding;
+  margin-bottom: 80px;
+
+  &__title {
+    text-align: center;
+    @include m.titles(700, 22px, 30px, inherit);
+  }
+
+  &__cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    @media (min-width:1440px) {
+      gap: 45px;
+    }
+  }
+}
+
+.skillCard {
+  background-color: white;
+  color: v.$main-color;
+  border-radius: 4px;
+
+  width: 335px;
+  height: 310px;
+
+
+  &__title {
+    @include m.titles(800, 0px, 22px);
+    padding: 24px 0px 0px 24px;
+  }
+
+  &__skillsConteiner {
+    margin: 0px 40px 0px 24px;
+    padding-bottom: 20px;
+    padding-top: 24px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .dots {
+      display: flex;
+      justify-content: space-between;
+      width: 100px;
+
+      .dot {
+        width: 14px;
+        height: 14px;
+        background-color: #C4C9D3;
+        border-radius: 100%;
+
+        &--colored{
+          background-color: #142850;
+        }
+      }
+    }
+  }
+
+  &__data {
+    display: flex;
+    align-items: center;
+
+    &--img {
+      width: 30px;
+      height: 30px;
+      background-color: lightcoral;
+      border-radius: 100%;
+      margin-right: 8px;
+    }
+
+    &--title {
+      @include m.titles(400, 0px, 20px);
+    }
+  }
+
+}

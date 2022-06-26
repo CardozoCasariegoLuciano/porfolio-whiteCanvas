@@ -1,0 +1,50 @@
+@use "./modules/variables" as v;
+@use "./modules/header";
+@use "./modules/hero";
+@use "./modules/skill";
+@use "./modules/featuredWorks";
+@use "./modules/footer";
+@use "./modules/about";
+@use "./modules/singleWork";
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+main{
+    //min-height: calc(100vh - 180px - 72px - 80px - 32px);
+}
+
+.ghost-button{
+    text-decoration: none;
+    color: v.$main-color;
+    border: 1px solid v.$main-color;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: v.$texts-family;
+    font-weight: 500;
+
+    @media (min-width:1240px) {
+        cursor: pointer;
+
+        &:hover{
+            background-color: v.$secondary-color;
+            color: white;
+            border:none;
+        }
+    }
+}
+
+.yearPill{
+    background-color: #142850;
+    color: white;
+    font-weight: 900;
+    font-size: 16px;
+    font-family: "Heebo";
+    padding: 1px 10px 0px 10px;
+    text-align: center;
+    border-radius: 16px;
+}
