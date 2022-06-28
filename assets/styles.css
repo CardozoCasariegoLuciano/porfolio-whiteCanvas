@@ -19,6 +19,15 @@
   color: black;
   text-decoration: none;
 }
+.header__logo--ending {
+  font-weight: 300;
+}
+.header__logo--ending span {
+  font-size: 35px;
+  font-weight: 900;
+  color: #FF6464;
+  margin-left: -3px;
+}
 .header__nav {
   display: flex;
 }
@@ -158,7 +167,7 @@
 .skillCard__item .dots .dot {
   width: 14px;
   height: 14px;
-  background-color: #C4C9D3;
+  background-color: #c4c9d3;
   border-radius: 100%;
 }
 .skillCard__item .dots .dot--colored {
@@ -168,12 +177,20 @@
   display: flex;
   align-items: center;
 }
-.skillCard__data--img {
+.skillCard__data--img, .skillCard__data--circle {
   width: 30px;
   height: 30px;
-  background-color: lightcoral;
   border-radius: 100%;
   margin-right: 8px;
+}
+.skillCard__data--img img, .skillCard__data--circle img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+}
+.skillCard__data--circle {
+  background-color: lightcoral;
 }
 .skillCard__data--title {
   font-weight: 400;
@@ -250,7 +267,7 @@
 }
 @media (min-width: 1000px) {
   .workCard__imgConteiner {
-    width: 250px;
+    max-width: 250px;
     height: 180px;
   }
 }
@@ -406,6 +423,21 @@
     width: 880px;
   }
 }
+.work-header__map {
+  color: #21243D;
+  font-size: 15px;
+  font-family: "Zilla Slab";
+  margin-bottom: 15px;
+}
+.work-header__map--root {
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+}
+.work-header__map--separator {
+  font-family: "Heboo";
+  margin: 0px 8px;
+}
 .work-header__title {
   font-weight: 800;
   font-family: "Montserrat";
@@ -480,10 +512,72 @@
   margin-bottom: 23px;
 }
 
+.page404 {
+  margin: auto;
+  text-align: center;
+}
+.page404__title {
+  font-weight: 700;
+  font-family: "Montserrat";
+  font-size: 200px;
+  margin-bottom: 10px;
+  color: #21243D;
+}
+@media (max-width: 600px) {
+  .page404__title {
+    font-weight: 700;
+    font-family: "Montserrat";
+    font-size: 100px;
+    margin-bottom: 10px;
+    color: #21243D;
+  }
+}
+.page404__content {
+  color: #21243D;
+  font-size: 20px;
+  font-family: "Zilla Slab";
+  margin-bottom: 20px;
+}
+@media (max-width: 600px) {
+  .page404__content {
+    color: #21243D;
+    font-size: 17px;
+    font-family: "Zilla Slab";
+  }
+}
+.page404__link {
+  color: #21243D;
+  font-size: 20px;
+  font-family: "Zilla Slab";
+  text-decoration: none;
+}
+.page404__link::after {
+  content: "<";
+  margin-left: 5px;
+}
+.page404__link::before {
+  content: ">";
+  margin-right: 5px;
+}
+.page404__link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .page404__link {
+    color: #21243D;
+    font-size: 17px;
+    font-family: "Zilla Slab";
+  }
+}
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+
+main {
+  min-height: calc(100vh - 180px - 72px - 80px - 61px);
 }
 
 .ghost-button {
@@ -515,6 +609,16 @@
   padding: 1px 10px 0px 10px;
   text-align: center;
   border-radius: 16px;
+}
+
+.no_content_found {
+  margin: auto;
+}
+.no_content_found p {
+  color: #21243D;
+  font-size: 20px;
+  font-family: "Zilla Slab";
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */

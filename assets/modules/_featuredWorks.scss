@@ -53,7 +53,7 @@
     height: 200px;
 
     @media (min-width: 1000px) {
-      width: 250px;
+      max-width: 250px;
       height: 180px;
     }
 
@@ -65,6 +65,7 @@
       object-fit: cover;
     }
   }
+
 
 
   &__title {

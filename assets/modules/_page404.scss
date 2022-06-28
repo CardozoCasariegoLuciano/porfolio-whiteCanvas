@@ -1,0 +1,46 @@
+@use "./mixis" as m;
+
+.page404{
+  margin: auto;
+  text-align: center;
+
+  &__title{
+    @include m.titles(700, 10px, 200px);
+
+    @media (max-width: 600px) {
+      @include m.titles(700, 10px, 100px);
+    }
+  }
+
+  &__content{
+    @include m.texts(20px);
+    margin-bottom: 20px;
+
+    @media (max-width: 600px) {
+      @include m.texts(17px);
+    }
+  }
+
+  &__link{
+    @include m.texts(20px);
+    text-decoration: none;
+
+    &::after{
+      content: "<";
+      margin-left: 5px;
+    }
+
+    &::before{
+      content: ">";
+      margin-right: 5px;
+    }
+
+    &:hover{
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      @include m.texts(17px);
+    }
+  }
+}

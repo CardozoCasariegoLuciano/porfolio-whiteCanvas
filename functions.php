@@ -41,7 +41,6 @@ add_action('wp_enqueue_scripts', 'scripts');
 
 
 function custom_post_type(){
-
     //register Work post type
     register_post_type(
         'works',
@@ -61,7 +60,6 @@ function custom_post_type(){
                 'slug' => 'works',
                 'with_front' => false,
             ),
-            'taxonomies' => array('category'),
         ));
 
     //register Language post type
@@ -77,11 +75,8 @@ function custom_post_type(){
             ),
             'public' => true,
             'supports' => array('title','thumbnail', 'revisions', 'custom-fields'),
+            'publicly_queryable'  => false,
             'menu_icon' => 'dashicons-flag',
-            'rewrite' => array(
-                'slug' => 'languages',
-                'with_front' => false,
-            )
         ));
 
     //register Tech post type
@@ -97,11 +92,8 @@ function custom_post_type(){
             ),
             'public' => true,
             'supports' => array('title','thumbnail', 'revisions', 'custom-fields'),
+            'publicly_queryable'  => false,
             'menu_icon' => 'dashicons-welcome-learn-more',
-            'rewrite' => array(
-                'slug' => 'tech',
-                'with_front' => false,
-            )
         ));
 
     //register about post type
@@ -116,17 +108,11 @@ function custom_post_type(){
                 'search_items' => 'Search',
             ),
             'public' => true,
-            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'revisions', 'custom-fields'),
+            'supports' => array('title', 'editor', 'revisions', 'custom-fields'),
             'menu_icon' => 'dashicons-clipboard',
-            'has_archive' => true,
-            'rewrite' => array(
-                'slug' => 'about',
-                'with_front' => false,
-            ),
-            'taxonomies' => array('category'),
+            'publicly_queryable'  => false,
         ));
 }
-
 add_action('init', 'custom_post_type');
 
 
@@ -142,4 +128,55 @@ function remove_comments() {
 }
 add_action( 'admin_menu', 'remove_comments' );
 
-?>
+ 
+//Custom taxonomy 
+function create_custom_taxonomy() {
+  $workArr = array(
+    'name' => _x( 'work-category', 'taxonomy general name' ),
+    'singular_name' => _x( 'work-category', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search work-category' ),
+    'all_items' => __( 'All work-categories' ),
+    'parent_item' => __( 'Parent work-category' ),
+    'parent_item_colon' => __( 'Parent work-category:' ),
+    'edit_item' => __( 'Edit work-category' ), 
+    'update_item' => __( 'Update work-category' ),
+    'add_new_item' => __( 'Add New work-category' ),
+    'new_item_name' => __( 'New work-category Name' ),
+    'menu_name' => __( 'work-category' ),
+  );    
+ 
+  register_taxonomy('work-category',array('works'), array(
+    'hierarchical' => true,
+    'labels' => $workArr,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'work-category' ),
+  ));
+ 
+  $aboutArr = array(
+    'name' => _x( 'about-category', 'taxonomy general name' ),
+    'singular_name' => _x( 'About-category', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search about-category' ),
+    'all_items' => __( 'All about-categories' ),
+    'parent_item' => __( 'Parent about-category' ),
+    'parent_item_colon' => __( 'Parent about-category:' ),
+    'edit_item' => __( 'Edit about-category' ), 
+    'update_item' => __( 'Update about-category' ),
+    'add_new_item' => __( 'Add New about-category' ),
+    'new_item_name' => __( 'New about-category Name' ),
+    'menu_name' => __( 'about-category' ),
+  );    
+ 
+  register_taxonomy('about-category',array('about'), array(
+    'hierarchical' => true,
+    'labels' => $aboutArr,
+    'show_ui' => true,
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'about-category' ),
+  ));
+}
+add_action( 'init', 'create_custom_taxonomy', 0 );

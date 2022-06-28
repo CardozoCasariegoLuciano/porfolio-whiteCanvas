@@ -5,6 +5,23 @@
 .work-header {
   @include m.content(40px, 400px);
 
+  &__map {
+    @include m.texts(15px);
+    margin-bottom: 15px;
+
+    &--root{
+      font-weight: 600;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    &--separator{
+      font-family:"Heboo";
+      margin: 0px 8px;
+    }
+
+  }
+
   &__title {
     @include m.titles(800, 24px, 30px, #142850);
   }

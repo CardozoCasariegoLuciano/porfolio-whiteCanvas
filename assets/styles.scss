@@ -6,6 +6,8 @@
 @use "./modules/footer";
 @use "./modules/about";
 @use "./modules/singleWork";
+@use "./modules/page404";
+@use "./modules/mixis" as m;
 
 
 *{
@@ -15,7 +17,7 @@
 }
 
 main{
-    //min-height: calc(100vh - 180px - 72px - 80px - 32px);
+    min-height: calc(100vh - 180px - 72px - 80px - 61px);
 }
 
 .ghost-button{
@@ -47,4 +49,12 @@ main{
     padding: 1px 10px 0px 10px;
     text-align: center;
     border-radius: 16px;
+}
+
+.no_content_found{
+    margin: auto;
+    p{
+        @include m.texts(20px);
+        text-align: center;
+    }
 }
