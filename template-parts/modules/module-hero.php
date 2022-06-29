@@ -3,7 +3,7 @@ $image = wp_get_attachment_image(get_field('image'), 'full', false, ["class" => 
 $title = get_field('title') ? esc_html(get_field('title')) : "Default title";
 $copy = esc_html(get_field('copy'));
 $buttonText = get_field('button-text') ? esc_html(get_field('button-text')) : "Default Button";
-$buttonFile = esc_url(get_field('button-file'));
+$buttonFile = get_field('button-file');
 ?>
 <section class="m-hero">
   <?php

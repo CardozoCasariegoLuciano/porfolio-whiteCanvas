@@ -6,6 +6,7 @@ $title = get_the_title() ? esc_html(get_the_title()) : "Default title";
 $date = get_field('work-year') ? get_field('work-year') : get_the_date('Y');
 $content = get_the_content();
 $excerpt = get_the_excerpt() ? esc_html(get_the_excerpt()) : false;
+
 ?>
 
 <section class="work-header">
@@ -30,7 +31,7 @@ $excerpt = get_the_excerpt() ? esc_html(get_the_excerpt()) : false;
 
 <?php if ($content) : ?>
   <section class="work">
-    <?= $content ?>
+    <?php the_content() ?>
   </section>
 <?php endif ?>
 

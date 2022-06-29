@@ -8,10 +8,11 @@
   color: $color;
 }
 
-@mixin texts($font-size, $color: v.$main-color) {
+@mixin texts($font-size, $color: v.$main-color, $line-height: 24px) {
   color: v.$main-color;
   font-size: $font-size;
   font-family: v.$texts-family;
+  line-height: $line-height;
 }
 
 @mixin content($margin-bottom, $mobile-w, $desktop-w : v.$desktop-section-width) {

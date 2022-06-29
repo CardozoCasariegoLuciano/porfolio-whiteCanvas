@@ -26,9 +26,9 @@ $excerpt = esc_html(get_the_excerpt());
         <span class="workCard__tag"> <?php print_Categories() ?></span>
       </div>
       <?php if (has_excerpt()) : ?>
-        <p class="workCard__description">
-          <?= $excerpt ?>
-        </p>
+        <div class="workCard__description">
+          <?php esc_html(the_excerpt()) ?>
+        </div>
       <?php endif ?>
     </div>
   </div>
