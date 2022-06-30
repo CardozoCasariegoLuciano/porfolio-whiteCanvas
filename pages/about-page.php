@@ -34,7 +34,7 @@ $content = esc_html(get_the_content());
 <section class="about">
   <h2 class="about__title"><?= $title ?></h2>
   <?php if ($content) : ?>
-    <div class="about__description"><?= $content ?></div>
+    <div class="about__description"><?php the_content() ?></div>
   <?php endif ?>
 </section>
 
