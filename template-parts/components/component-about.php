@@ -2,7 +2,6 @@
 $title = get_the_title() ? esc_html(get_the_title()) : "No title setted";
 $init_date = esc_html(get_field('about_init'));
 $end_date = esc_html(get_field('about_end'));
-$content = esc_html(get_the_content());
 ?>
 
 
@@ -23,9 +22,9 @@ $content = esc_html(get_the_content());
     </p>
   <?php endif ?>
 
-  <?php if ($content) : ?>
+  <?php if (get_the_content()) : ?>
     <div class="aboutSection__item--description">
-      <?= $content ?>
+      <?php the_content() ?>
     </div>
   <?php endif ?>
 </div>

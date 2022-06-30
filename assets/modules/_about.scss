@@ -54,6 +54,20 @@
 
     &--description {
       @include m.texts(16px);
+      margin-bottom: 15px;
+
+      ol,ul{
+        margin-left: 20px;
+      }
+
+      p,h2,h3,h4,h5,h6{
+        margin: 15px 0px;
+      }
+
+      h2,h3,h4,h5,h6{
+        font-size: 18px;
+      }
+
     }
   }
 }

@@ -413,6 +413,16 @@
   font-size: 16px;
   font-family: "Zilla Slab";
   line-height: 24px;
+  margin-bottom: 15px;
+}
+.aboutSection__item--description ol, .aboutSection__item--description ul {
+  margin-left: 20px;
+}
+.aboutSection__item--description p, .aboutSection__item--description h2, .aboutSection__item--description h3, .aboutSection__item--description h4, .aboutSection__item--description h5, .aboutSection__item--description h6 {
+  margin: 15px 0px;
+}
+.aboutSection__item--description h2, .aboutSection__item--description h3, .aboutSection__item--description h4, .aboutSection__item--description h5, .aboutSection__item--description h6 {
+  font-size: 18px;
 }
 
 .work-header {
