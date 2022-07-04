@@ -187,7 +187,6 @@
 .skillCard__data--img img, .skillCard__data--circle img {
   width: 100%;
   height: 100%;
-  border-radius: 100%;
   object-fit: cover;
 }
 .skillCard__data--circle {
