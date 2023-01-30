@@ -12,6 +12,12 @@
     margin-bottom: 55px;
   }
 }
+@media (min-width: 1200px) {
+  .header {
+    width: 1200px;
+    margin: auto;
+  }
+}
 .header__logo {
   font-size: 18px;
   font-family: "roboto";
@@ -117,8 +123,16 @@
   font-weight: 700;
   font-family: "Montserrat";
   font-size: 30px;
-  margin-bottom: 22px;
+  margin-bottom: 0px;
   color: inherit;
+}
+.skill__subtitle {
+  text-align: center;
+  color: inherit;
+  font-size: 15px;
+  font-family: "Zilla Slab";
+  line-height: 24px;
+  margin-bottom: 22px;
 }
 .skill__cards {
   display: flex;

@@ -16,6 +16,7 @@ $cant_posts = $tech->found_posts;
 
 <section class="skill">
   <h2 class="skill__title"><?php echo $skillTitle ?></h2>
+<p class="skill__subtitle">*how much i enjoy work with</p>
   <div class="skill__cards">
     <?php
 

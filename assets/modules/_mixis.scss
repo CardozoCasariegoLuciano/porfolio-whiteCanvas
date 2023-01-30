@@ -9,7 +9,7 @@
 }
 
 @mixin texts($font-size, $color: v.$main-color, $line-height: 24px) {
-  color: v.$main-color;
+  color: $color;
   font-size: $font-size;
   font-family: v.$texts-family;
   line-height: $line-height;

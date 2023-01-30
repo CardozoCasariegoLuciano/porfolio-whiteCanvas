@@ -9,7 +9,12 @@
 
   &__title {
     text-align: center;
-    @include m.titles(700, 22px, 30px, inherit);
+    @include m.titles(700, 0px, 30px, inherit);
+  }
+  &__subtitle {
+    text-align: center;
+    @include m.texts(15px, inherit);
+    margin-bottom: 22px;
   }
 
   &__cards {
